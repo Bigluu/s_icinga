@@ -54,8 +54,6 @@ class s_icinga::server {
   }
   include apache::mod::php
 
-  apache::mod { 'authnz_ldap': }
-  apache::mod { 'ldap': }
   apache::vhost { "${apache_servername}":
     priority    => '10',
     port        => '443',
@@ -92,14 +90,10 @@ class s_icinga::server {
         'options'         => ['FollowSymLinks'],
         'directoryindex'  => 'index.html',
         'allow_override'  => ['AuthConfig'],
-        'auth_name'       => 'Kolab LDAP Logins',
+        'auth_name'       => 'Icinga Login',
         'auth_type'       => 'Basic',
-        #'auth_user_file'  => '/etc/icinga2/classicui/htpasswd.users',
+        'auth_user_file'  => '/etc/icinga2/classicui/htpasswd.users',
         'auth_require'    => 'valid-user',
-        'custom_fragment' => 'AuthLDAPURL "ldap://kolab1.vshn.net:389/ou=People,dc=vshn,dc=net?uid"
-    AuthLDAPBindDN "uid=kolab-service,ou=Special Users,dc=vshn,dc=net"
-    AuthLDAPBindPassword "MSJtEaE2HXYMhsY"
-    AuthBasicProvider ldap'
       },
       { 'path'            => '/usr/share/icingaweb2/public',
         'provider'        => 'directory',
