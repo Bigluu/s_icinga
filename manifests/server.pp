@@ -92,7 +92,7 @@ class s_icinga::server {
         'allow_override'  => ['AuthConfig'],
         'auth_name'       => 'Icinga Login',
         'auth_type'       => 'Basic',
-        'auth_user_file'  => '/etc/icinga2/classicui/htpasswd.users',
+        'auth_user_file'  => '/etc/icinga2-classicui/htpasswd.users',
         'auth_require'    => 'valid-user',
       },
       #      { 'path'            => '/usr/share/icingaweb2/public',
