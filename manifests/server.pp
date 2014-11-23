@@ -70,7 +70,7 @@ class s_icinga::server {
         path        => '/usr/lib/cgi-bin/icinga2-classicui',
       },
       { alias => '/icinga2-classicui/stylesheets',
-        path  => '/etc/icinga2/classicui/stylesheets',
+        path  => '/etc/icinga2-classicui/stylesheets',
       },
       { alias => '/icinga2-classicui',
         path  => '/usr/share/icinga2/classicui',
