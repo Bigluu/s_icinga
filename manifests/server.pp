@@ -83,7 +83,7 @@ class s_icinga::server {
       { 'path'            => '^/cgi-bin/icinga2-classicui',
         'provider'        => 'locationmatch',
         'auth_require'    => 'valid-user',
-        'custom_fragment' => 'SetEnv ICINGA_CGI_CONFIG /etc/icinga2/classicui/cgi.cfg',
+        'custom_fragment' => 'SetEnv ICINGA_CGI_CONFIG /etc/icinga2-classicui/cgi.cfg',
       },
       { 'path'            => '^(?:/usr/share/icinga2/classicui/htdocs|/usr/lib/cgi-bin/icinga2-classicui|/etc/icinga2/classicui/stylesheets)/',
         'provider'        => 'directorymatch',
